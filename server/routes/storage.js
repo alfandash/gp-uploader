@@ -13,6 +13,7 @@ const upload = multer({
 /* GET users listing. */
 router.post('/upload', upload.single('file'), controllersStorage.uploadUser);
 router.delete('/delete', controllersStorage.deleteFile);
+router.get('/', controllersStorage.findById)
 
 router.get("/", (req, res) => {
   console.log('masuk');

@@ -9,8 +9,6 @@ var mongoose = require('mongoose');
 require('dotenv').config()
 var cors = require('cors')
 
-require('dotenv').config()
-var cors = require('cors')
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -23,6 +21,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
+app.use(cors())
 
 
 var index = require('./routes/index');
@@ -36,7 +35,7 @@ app.use('/storage', storage)
 
 
 // connection to mongodb
-var mongoDB = 'mongodb://localhost/ada-todo';
+var mongoDB = 'mongodb://localhost/gp-uploader';
 mongoose.connect(mongoDB);
 //Get the default connection
 var db = mongoose.connection
