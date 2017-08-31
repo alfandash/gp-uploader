@@ -36,7 +36,7 @@ $('form.form-signin').submit(eventHandler=>{
       } else {
         alert('Login success')
         localStorage.setItem('gp-uploader-token', response.token)
-        window.location.href = "/storage.html"
+        window.location.href = "storage.html"
       }
     }
   })

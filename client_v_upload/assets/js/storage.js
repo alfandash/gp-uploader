@@ -11,7 +11,7 @@ $(document).ready(function(){
 
 $('.logout').click((function() {
   localStorage.removeItem('gp-uploader-token')
-  window.location.href = "/index.html"
+  window.location.href = "index.html"
 }))
 
 $('form.form-add-file').submit(eventHandler=>{
@@ -62,7 +62,7 @@ function loadTask(){
     headers: adatodotoken,
     success: function(response) {
       if (response.error === 'belum login') {
-        window.location.href = "/"
+        window.location.href = "index.html"
       }
       // $('#data-table').fadeOut('slow')
       // $('#data-table').fadeIn('slow')
@@ -78,6 +78,9 @@ function loadTask(){
         $('#task-data').append(`<td>${updated_at.toDateString()}</td>`)
         $('#task-data').append(`
           <td>
+          <a href="${storage.link_file}" download="${storage.link_file}">
+             <button type="button" class="btn btn-primary">download</button>
+          </a>
             <form class="delete" method="post" onsubmit="destroy('${storage.link_file}','${storage._id}');return false">
                <button type="submit" name="submit" class="btn btn-danger"> delete</button>
            </form>
