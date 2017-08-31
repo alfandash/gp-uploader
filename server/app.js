@@ -37,7 +37,7 @@ app.use('/storage', storage)
 // connection to mongodb dev mode
 var mongoDB = 'mongodb://localhost/gp-uploader';
 // connection to mongodb deploy model
-var mongoDB = 'mongodb://1771911:alfandiki91@cluster0-shard-00-00-bqolv.mongodb.net:27017,cluster0-shard-00-01-bqolv.mongodb.net:27017,cluster0-shard-00-02-bqolv.mongodb.net:27017/gp-uploader?ssl=true&replicaSet=Cluster0-shard-0&authSource=admin'
+//var mongoDB = 'mongodb://1771911:alfandiki91@cluster0-shard-00-00-bqolv.mongodb.net:27017,cluster0-shard-00-01-bqolv.mongodb.net:27017,cluster0-shard-00-02-bqolv.mongodb.net:27017/gp-uploader?ssl=true&replicaSet=Cluster0-shard-0&authSource=admin'
 
 mongoose.connect(mongoDB);
 //Get the default connection

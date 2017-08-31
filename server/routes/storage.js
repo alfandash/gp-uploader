@@ -2,6 +2,7 @@ var express = require('express');
 var router = express.Router();
 
 const controllersStorage = require('../controllers/upload');
+// require multer
 let multer = require('multer');
 const upload = multer({
   storage: multer.MemoryStorage,
@@ -9,6 +10,11 @@ const upload = multer({
     fileSize: 5 * 1024 * 1024 // no larger than 5mb
   }
 });
+
+// add controllers
+const jwt = require('../helper/jwtHelper');
+
+router.use(jwt.loginCheck)
 
 /* GET users listing. */
 router.post('/upload', upload.single('file'), controllersStorage.uploadUser);

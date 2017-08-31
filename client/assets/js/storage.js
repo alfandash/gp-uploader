@@ -7,6 +7,10 @@ $(document).ready(function(){
   }
 })
 
+$('.logout').click((function() {
+  localStorage.removeItem('gp-uploader-token')
+  window.location.href = "/index.html"
+}))
 
 $('form.form-add-file').submit(eventHandler=>{
   var gpuploadertoken = {'token': localStorage.getItem('gp-uploader-token')}
