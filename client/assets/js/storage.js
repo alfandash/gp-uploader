@@ -32,34 +32,7 @@ $('form.form-add-file').submit(eventHandler=>{
   })
 })
 
-//
-// $('form.form-add-task').submit(eventHandler=>{
-//   var adatodotoken = {'token': localStorage.getItem('gp-uploader-token')}
-//   eventHandler.preventDefault()
-//   $.ajax({
-//     url: 'http://localhost:3000/storage/',
-//     type: 'POST',
-//     headers: adatodotoken,
-//     data: {
-//       task: $('#add-task').val()
-//     },
-//     success: function(response){
-//       console.log(response);
-//       $('#form-add-status').fadeOut('fast')
-//       $('#form-add-status').empty()
-//       $('#form-add-status').append(`Task baru berhasil di tambahkan`)
-//       $('#form-add-status').fadeIn('slow')
-//       loadTask()
-//     }
-//   })
-// })
-//
-// $('.logout').click((function() {
-//   localStorage.removeItem('gp-uploader-token')
-//   window.location.href = "/index.html"
-// }))
-//
-//
+
 function destroy(link,id){
   console.log(link);
   console.log(id);
